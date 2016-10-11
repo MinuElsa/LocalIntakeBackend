@@ -1,4 +1,4 @@
-var mongoose = require('./db.js');
+var dbJs = require('./db.js');
 
 var mongoose  = require('mongoose');
 
@@ -23,25 +23,15 @@ var projectSchema = mongoose.Schema({
         reason: String,
         executiveSponsor: String,
         businessSponsor: String,
-		applicationsImpacted:[{
-			applicationsImpacted: String
-		}],
-		departmentImpacted:[{
-			departmentImpacted: String
-		}],
-		regionsImpacted:[{
-			regionsImpacted: String
-		}],
-		servicesImpacted:[{
-			servicesImpacted: String
-		}]
+		applicationsImpacted:[String],
+		departmentImpacted:[String],
+		regionsImpacted:[String],
+		servicesImpacted:[String]
 	}],
 	assessment: [{
 		emtLead: String,
 		emtPrimaryOwner: String,
-		emtTeamsImpacted:[{
-			emtTeamsImpacted: String		
-		}],
+		emtTeamsImpacted:[String],
 		projectType: String,
 		budget: [
 			{
