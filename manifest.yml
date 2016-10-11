@@ -5,3 +5,5 @@ applications:
   command: node app.js
   memory: 256M
   instances: 1
+services:
+- kaisermongodb
