@@ -31,10 +31,10 @@ var mongoUrl = null;
 var mongoService = null;*/
 
 //Testing credentials for Compose
-//console.log("mongo:user=" + mongoService.credentials.user);
-//console.log("mongo:password=" + mongoService.credentials.password);
-//console.log("mongo:uri=" + mongoService.credentials.uri);
-//console.log("mongo:port=" + mongoService.credentials.port);
+console.log("mongo:user=" + mongoService.credentials.user);
+console.log("mongo:password=" + mongoService.credentials.password);
+console.log("mongo:uri=" + mongoService.credentials.uri);
+console.log("mongo:port=" + mongoService.credentials.port);
 
 //Bind mongodb connection
 /*var mongoose = require('mongoose');
