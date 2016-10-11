@@ -9,21 +9,17 @@ var mongoUrl = appEnv.getServiceURL('kaisermongodb');
 var mongoService = appEnv.getService("kaisermongodb");
 
 var mongoose = require('mongoose');
-//mongoose.connect('mongodb://blueprintapp:c0gn1zant@172.31.200.51:27017/blueprint');
-//mongoose.connect('mongodb://blueprintapp:c0gn1zant@52.203.126.123:27017/blueprint'); 
-//mongoose.connect('mongodb://10.243.194.97:27017/test');
 
 if (mongoUrl == null) {
-	  //local development
-	  mongoose.Promise = global.Promise;
-	  mongoose.connect('mongodb://localhost/project');
-	} else {
-	  //Bluemix cloud foundry - Compose service connection
-	  var mongooseUrl = 'mongodb://' + mongoService.credentials.user + ':' + mongoService.credentials.password + '@' + mongoService.credentials.uri + ':' + mongoService.credentials.port + '/project';
-	  //console.log('mongooseUrl:' + mongooseUrl);
-	  mongoose.Promise = global.Promise;
-	  mongoose.connect(mongooseUrl);
-	}
+	//local development
+	mongoose.Promise = global.Promise;
+	mongoose.connect('mongodb://localhost/project');
+} else {
+	//Bluemix cloud foundry - Compose service connection
+	var mongooseUrl = 'mongodb://' + mongoService.credentials.username + ':' + mongoService.credentials.password + '@' + mongoService.credentials.url + ':' + mongoService.credentials.port + '/project';
+	console.log('IN DB JS mongooseUrl:' + mongooseUrl);
+	mongoose.Promise = global.Promise;
+	mongoose.connect(mongooseUrl);
+}
 
-//mongoose.connect('mongodb://localhost/intake');
 module.exports = mongoose;
