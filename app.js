@@ -22,8 +22,8 @@ var appEnv = cfenv.getAppEnv();
 //
 var port = appEnv.port || '6002';
 var routeUrl =  appEnv.bind || 'localhost';
-var mongoUrl = appEnv.getServiceURL('intakemongodb');
-var mongoService = appEnv.getService("intakemongodb");
+var mongoUrl = appEnv.getServiceURL('kaisermongodb');
+var mongoService = appEnv.getService("kaisermongodb");
 
 /*var port =  '6002';
 var routeUrl =  'localhost';
