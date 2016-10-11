@@ -5,8 +5,8 @@ var appEnv = cfenv.getAppEnv();
 //
 var port = appEnv.port || '6002';
 var routeUrl =  appEnv.bind || 'localhost';
-var mongoUrl = appEnv.getServiceURL('intakemongodb');
-var mongoService = appEnv.getService("intakemongodb");
+var mongoUrl = appEnv.getServiceURL('kaisermongodb');
+var mongoService = appEnv.getService("kaisermongodb");
 
 var mongoose = require('mongoose');
 //mongoose.connect('mongodb://blueprintapp:c0gn1zant@172.31.200.51:27017/blueprint');
