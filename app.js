@@ -22,33 +22,6 @@ var appEnv = cfenv.getAppEnv();
 //
 var port = appEnv.port || '6002';
 var routeUrl =  appEnv.bind || 'localhost';
-var mongoUrl = appEnv.getServiceURL('kaisermongodb');
-var mongoService = appEnv.getService("kaisermongodb");
-
-/*var port =  '6002';
-var routeUrl =  'localhost';
-var mongoUrl = null;
-var mongoService = null;*/
-
-//Testing credentials for Compose
-console.log("mongo:user=" + mongoService.credentials.user);
-console.log("mongo:password=" + mongoService.credentials.password);
-console.log("mongo:uri=" + mongoService.credentials.uri);
-console.log("mongo:port=" + mongoService.credentials.port);
-
-//Bind mongodb connection
-/*var mongoose = require('mongoose');
-if (mongoUrl == null) {
-  //local development
-  mongoose.Promise = global.Promise;
-  mongoose.connect('mongodb://localhost/project');
-} else {
-  //Bluemix cloud foundry - Compose service connection
-  var mongooseUrl = 'mongodb://' + mongoService.credentials.user + ':' + mongoService.credentials.password + '@' + mongoService.credentials.uri + ':' + mongoService.credentials.port + '/project';
-  //console.log('mongooseUrl:' + mongooseUrl);
-  mongoose.Promise = global.Promise;
-  mongoose.connect(mongooseUrl);
-}*/
 
 //JSON body parsing
 app.use(bodyParser.json());
