@@ -16,7 +16,7 @@ if (mongoUrl == null) {
 	mongoose.connect('mongodb://localhost/project');
 } else {
 	//Bluemix cloud foundry - Compose service connection
-	var mongooseUrl = 'mongodb://' + mongoService.credentials.username + ':' + mongoService.credentials.password + '@' + mongoService.credentials.url + ':' + mongoService.credentials.port + '/project';
+	var mongooseUrl = 'mongodb://' + mongoService.credentials.username + ':' + mongoService.credentials.password + '@' + mongoService.credentials.url + ':' + mongoService.credentials.port + '/db';
 	console.log('IN DB JS mongooseUrl:' + mongooseUrl);
 	mongoose.Promise = global.Promise;
 	mongoose.connect(mongooseUrl);
